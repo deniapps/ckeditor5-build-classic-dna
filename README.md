@@ -3,11 +3,11 @@
 The DNA classic editor build for CKEditor 5 was created on the top of official CKEditor 5 classic editor build v20.0.0. It mainly add two features:
 
 - Integrated with Code Block
-- Allowed to insert a image by url.
+- Allowed to insert an image by url.
 
 Read more about the [classic editor build](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/overview.html#classic-editor) and see the [demo](https://ckeditor.com/docs/ckeditor5/latest/examples/builds/classic-editor.html).
 
-![CKEditor 5 classic editor build screenshot](https://c.cksource.com/a/1/img/npm/ckeditor5-build-classic.png)
+![CKEditor 5 classic editor build screenshot](https://user-images.githubusercontent.com/66892370/86845106-01ad5780-c077-11ea-8294-6fa039b30720.png)
 
 ## Documentation
 
