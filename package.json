@@ -1,5 +1,5 @@
 {
-  "name": "@deniapps/ckeditor5-build-classic-dna",
+  "name": "ckeditor5-build-classic-dna",
   "version": "1.0.0",
   "description": "The DNA classic editor build of CKEditor 5 – the best browser-based rich text editor.",
   "keywords": [
