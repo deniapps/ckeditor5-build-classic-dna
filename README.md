@@ -5,7 +5,7 @@ The DNA classic editor build for CKEditor 5 was created on the top of official C
 - Integrated with Code Block
 - Allowed to insert an image by url.
 
-Read more about the [classic editor build](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/overview.html#classic-editor) and see the [demo](https://ckeditor.com/docs/ckeditor5/latest/examples/builds/classic-editor.html).
+Read more about the [classic editor build](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/overview.html#classic-editor) and see the [demo](https://deniapps.com/playground/ckeditor).
 
 ![CKEditor 5 classic editor build screenshot](https://user-images.githubusercontent.com/66892370/86845106-01ad5780-c077-11ea-8294-6fa039b30720.png)
 
@@ -59,6 +59,61 @@ ClassicEditor.create(document.querySelector("#editor"))
   .catch(error => {
     console.error("There was a problem initializing the editor.", error);
   });
+```
+
+Or in React With SSR (for example: NextJS)
+
+```js
+import { useState } from "react";
+// For SSR, you cannot import CKEditor directly since it needs client functions to run.
+// import CKEditor from "components/Common/CKEditor";
+import dynamic from "next/dynamic";
+const CKEditor = dynamic(() => import("components/Common/CKEditor"), {
+  ssr: false
+});
+
+const CKEditorDemo = () => {
+  const [content, setContent] = useState("");
+  return <CKEditor value={content} onChange={setContent} />;
+};
+
+export default CKEditorDemo;
+```
+
+And with the CKEDitor component like:
+
+```js
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import CKEditor from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "ckeditor5-build-classic-dna";
+
+class CKEditor5 extends Component {
+  static get propTypes() {
+    return {
+      value: PropTypes.string,
+      onChange: PropTypes.func
+    };
+  }
+
+  render() {
+    return (
+      <CKEditor
+        editor={ClassicEditor}
+        data={this.props.value}
+        onInit={editor => {
+          // You can store the "editor" and use when it is needed.
+          console.log("Editor is ready to use!", editor);
+        }}
+        onChange={(event, editor) => {
+          const data = editor.getData();
+          this.props.onChange(data);
+        }}
+      />
+    );
+  }
+}
+export default CKEditor5;
 ```
 
 **Note:** If you are planning to integrate CKEditor 5 deep into your application, it is actually more convenient and recommended to install and import the source modules directly (like it happens in `ckeditor.js`). Read more in the [Advanced setup guide](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/advanced-setup.html).
