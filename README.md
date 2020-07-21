@@ -9,6 +9,11 @@ Read more about the [classic editor build](https://ckeditor.com/docs/ckeditor5/l
 
 ![CKEditor 5 classic editor build screenshot](https://user-images.githubusercontent.com/66892370/86845106-01ad5780-c077-11ea-8294-6fa039b30720.png)
 
+## How-To from DeNiApps
+
+- [Syntax Highlighting with Code Block](https://deniapps.com/blog/syntax-highlight-with-ckeditors-code-block)
+- [Open External Links in New Tab](https://deniapps.com/blog/open-external-links-in-new-tab-for-ckeditor)
+
 ## Documentation
 
 See:
