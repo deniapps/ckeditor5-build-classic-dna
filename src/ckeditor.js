@@ -10,6 +10,7 @@ import Essentials from "@ckeditor/ckeditor5-essentials/src/essentials";
 import Autoformat from "@ckeditor/ckeditor5-autoformat/src/autoformat";
 import Bold from "@ckeditor/ckeditor5-basic-styles/src/bold";
 import Italic from "@ckeditor/ckeditor5-basic-styles/src/italic";
+import Code from "@ckeditor/ckeditor5-basic-styles/src/code";
 import CodeBlock from "@ckeditor/ckeditor5-code-block/src/codeblock";
 import BlockQuote from "@ckeditor/ckeditor5-block-quote/src/blockquote";
 import Heading from "@ckeditor/ckeditor5-heading/src/heading";
@@ -36,6 +37,7 @@ ClassicEditor.builtinPlugins = [
   Autoformat,
   Bold,
   Italic,
+  Code,
   CodeBlock,
   BlockQuote,
   Heading,
@@ -71,6 +73,7 @@ ClassicEditor.defaultConfig = {
       "outdent",
       "|",
       "insertImage",
+      "code",
       "codeBlock",
       "blockQuote",
       "insertTable",
