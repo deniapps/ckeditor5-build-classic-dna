@@ -1,6 +1,7 @@
 import Plugin from "@ckeditor/ckeditor5-core/src/plugin";
 import ButtonView from "@ckeditor/ckeditor5-ui/src/button/buttonview";
 import imageIcon from "@ckeditor/ckeditor5-core/theme/icons/image.svg";
+import Swal from "sweetalert2";
 
 export default class InsertImage extends Plugin {
   init() {
@@ -17,20 +18,22 @@ export default class InsertImage extends Plugin {
 
       // Callback executed once the image is clicked.
       view.on("execute", () => {
-        const imageUrl = prompt("Image URL");
-        if (!imageUrl) return false;
+        Swal.fire("Hello world!");
 
-        editor.model.change(writer => {
-          const imageElement = writer.createElement("image", {
-            src: imageUrl
-          });
+        // const imageUrl = prompt("Image URL");
+        // if (!imageUrl) return false;
 
-          // Insert the image in the current selection location.
-          editor.model.insertContent(
-            imageElement,
-            editor.model.document.selection
-          );
-        });
+        // editor.model.change(writer => {
+        //   const imageElement = writer.createElement("image", {
+        //     src: imageUrl
+        //   });
+
+        //   // Insert the image in the current selection location.
+        //   editor.model.insertContent(
+        //     imageElement,
+        //     editor.model.document.selection
+        //   );
+        // });
       });
 
       return view;
