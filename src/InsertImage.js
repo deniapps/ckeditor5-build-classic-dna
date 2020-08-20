@@ -7,13 +7,13 @@ export default class InsertImage extends Plugin {
   init() {
     const editor = this.editor;
 
-    editor.ui.componentFactory.add("insertImage", locale => {
+    editor.ui.componentFactory.add("insertImage", (locale) => {
       const view = new ButtonView(locale);
 
       view.set({
         label: "Insert image url",
         icon: imageIcon,
-        tooltip: true
+        tooltip: true,
       });
 
       // Callback executed once the image is clicked.
@@ -21,9 +21,9 @@ export default class InsertImage extends Plugin {
         const imageUrl = prompt("Image URL");
         if (!imageUrl) return false;
 
-        editor.model.change(writer => {
+        editor.model.change((writer) => {
           const imageElement = writer.createElement("image", {
-            src: imageUrl
+            src: imageUrl,
           });
 
           // Insert the image in the current selection location.

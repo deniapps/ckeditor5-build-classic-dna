@@ -28,6 +28,7 @@ import Table from "@ckeditor/ckeditor5-table/src/table";
 import TableToolbar from "@ckeditor/ckeditor5-table/src/tabletoolbar";
 import TextTransformation from "@ckeditor/ckeditor5-typing/src/texttransformation";
 import InsertImage from "./InsertImage";
+import InsertImageFromUnsplash from "./InsertImageFromUnsplash";
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -47,6 +48,7 @@ ClassicEditor.builtinPlugins = [
   ImageToolbar,
   ImageUpload,
   InsertImage,
+  InsertImageFromUnsplash,
   Indent,
   Link,
   List,
@@ -54,7 +56,7 @@ ClassicEditor.builtinPlugins = [
   Paragraph,
   Table,
   TableToolbar,
-  TextTransformation
+  TextTransformation,
 ];
 
 // Editor configuration.
@@ -73,21 +75,27 @@ ClassicEditor.defaultConfig = {
       "outdent",
       "|",
       "insertImage",
+      "insertImageFromUnsplash",
       "code",
       "codeBlock",
       "blockQuote",
       "insertTable",
       "mediaEmbed",
       "undo",
-      "redo"
-    ]
+      "redo",
+    ],
   },
   image: {
-    toolbar: ["imageStyle:full", "imageStyle:side", "|", "imageTextAlternative"]
+    toolbar: [
+      "imageStyle:full",
+      "imageStyle:side",
+      "|",
+      "imageTextAlternative",
+    ],
   },
   table: {
-    contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"]
+    contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"],
   },
   // This value must be kept in sync with the language defined in webpack.config.js.
-  language: "en"
+  language: "en",
 };
