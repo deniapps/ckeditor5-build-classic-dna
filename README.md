@@ -2,15 +2,17 @@
 
 The DNA classic editor build for CKEditor 5 was created on the top of official CKEditor 5 classic editor build v21.0.0. It's a **CKEditor 5 Build for Developer's Blog**, including some features:
 
+- Allowed to add image from unsplash
 - Integrated with Code Block
-- Allowed to insert an image by url.
-- Added <code> for inline Code Block
+- Allowed to insert an image by url
+- Added &lt;code&gt; for inline Code Block
 
 Read more about the [classic editor build](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/overview.html#classic-editor) and see the [demo](https://deniapps.com/playground/ckeditor).
 
 ![CKEditor 5 classic editor build screenshot](https://user-images.githubusercontent.com/66892370/86845106-01ad5780-c077-11ea-8294-6fa039b30720.png)
 
 ## How-Tos
+
 - [Customize CKEditor5 Toolbar](https://deniapps.com/blog/customize-ckeditor5-toolbar)
 - [Syntax Highlighting with Code Block](https://deniapps.com/blog/syntax-highlight-with-ckeditors-code-block)
 - [Open External Links in New Tab](https://deniapps.com/blog/open-external-links-in-new-tab-for-ckeditor)
@@ -41,10 +43,10 @@ And use it in your website:
 <script src="./node_modules/ckeditor5-build-classic-dna/build/ckeditor.js"></script>
 <script>
   ClassicEditor.create(document.querySelector("#editor"))
-    .then(editor => {
+    .then((editor) => {
       window.editor = editor;
     })
-    .catch(error => {
+    .catch((error) => {
       console.error("There was a problem initializing the editor.", error);
     });
 </script>
@@ -59,10 +61,10 @@ import ClassicEditor from "ckeditor5-build-classic-dna";
 // const ClassicEditor = require( 'ckeditor5-build-classic-dna' );
 
 ClassicEditor.create(document.querySelector("#editor"))
-  .then(editor => {
+  .then((editor) => {
     window.editor = editor;
   })
-  .catch(error => {
+  .catch((error) => {
     console.error("There was a problem initializing the editor.", error);
   });
 ```
@@ -75,7 +77,7 @@ import { useState } from "react";
 // import CKEditor from "components/Common/CKEditor";
 import dynamic from "next/dynamic";
 const CKEditor = dynamic(() => import("components/Common/CKEditor"), {
-  ssr: false
+  ssr: false,
 });
 
 const CKEditorDemo = () => {
@@ -98,7 +100,7 @@ class CKEditor5 extends Component {
   static get propTypes() {
     return {
       value: PropTypes.string,
-      onChange: PropTypes.func
+      onChange: PropTypes.func,
     };
   }
 
@@ -107,7 +109,7 @@ class CKEditor5 extends Component {
       <CKEditor
         editor={ClassicEditor}
         data={this.props.value}
-        onInit={editor => {
+        onInit={(editor) => {
           // You can store the "editor" and use when it is needed.
           console.log("Editor is ready to use!", editor);
         }}
