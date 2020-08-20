@@ -145,7 +145,8 @@ export default class InsertImageFromUnsplash extends Plugin {
           modal = document.querySelector("#dnx-modal");
           modalOverlay = document.querySelector("#dnx-modal-overlay");
 
-          closeButton.addEventListener("click", function () {
+          closeButton.addEventListener("click", function (e) {
+            e.preventDefault();
             modal.classList.toggle("closed");
             modalOverlay.classList.toggle("closed");
             document.querySelector("body").style.overflow = "visible";

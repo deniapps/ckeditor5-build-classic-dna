@@ -1,15 +1,15 @@
 # CKEditor 5 classic editor build by DNA (DeNiApps)
 
-The DNA classic editor build for CKEditor 5 was created on the top of official CKEditor 5 classic editor build v21.0.0. It's a **CKEditor 5 Build for Developer's Blog**, including some features:
+The DNA classic editor build for CKEditor 5 was created on the top of official CKEditor 5 classic editor build v21.0.0. It's a **CKEditor 5 Custom Build for Developer's Blog**, including some features:
 
-- Allowed to add image from unsplash
+- Allowed to add image from unsplash (since V1.0.6)
+- Added &lt;code&gt; for inline Code Block (since V1.0.5)
 - Integrated with Code Block
 - Allowed to insert an image by url
-- Added &lt;code&gt; for inline Code Block
 
-Read more about the [classic editor build](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/overview.html#classic-editor) and see the [demo](https://deniapps.com/playground/ckeditor).
+## DEMO
 
-![CKEditor 5 classic editor build screenshot](https://user-images.githubusercontent.com/66892370/86845106-01ad5780-c077-11ea-8294-6fa039b30720.png)
+[SEE DEMO](https://deniapps.com/playground/ckeditor)
 
 ## How-Tos
 
@@ -17,14 +17,9 @@ Read more about the [classic editor build](https://ckeditor.com/docs/ckeditor5/l
 - [Syntax Highlighting with Code Block](https://deniapps.com/blog/syntax-highlight-with-ckeditors-code-block)
 - [Open External Links in New Tab](https://deniapps.com/blog/open-external-links-in-new-tab-for-ckeditor)
 
-## Documentation
+## Screenshots
 
-See:
-
-- [Installation](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/installation.html) for how to install this package and what it contains.
-- [Basic API](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/basic-api.html) for how to create an editor and interact with it.
-- [Configuration](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/configuration.html) for how to configure the editor.
-- [Creating custom builds](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/development/custom-builds.html) for how to customize the build (configure and rebuild the editor bundle).
+![CKEditor 5 classic editor build screenshot](https://user-images.githubusercontent.com/66892370/86845106-01ad5780-c077-11ea-8294-6fa039b30720.png)
 
 ## Quick start
 
