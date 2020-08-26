@@ -13,3 +13,4 @@ npm-debug.log
 .gitignore
 src
 node_modules
+test.sh

@@ -44,6 +44,7 @@ const App = (props) => {
   //   clientID;
 
   useEffect(() => {
+    queryInput.current.focus();
     const photosUrl = query ? `${randomUrl}&query=${query}` : randomUrl;
 
     simpleGet({
@@ -70,6 +71,7 @@ const App = (props) => {
         onSubmit={searchPhotos}
       >
         <input
+          id="dnx-unsplash-search-input"
           ref={queryInput}
           placeholder="Search Photos on Unsplash"
           type="search"
@@ -127,6 +129,7 @@ export default class InsertImageFromUnsplash extends Plugin {
           ).style.overflow = modal.classList.contains("closed")
             ? "visible"
             : "hidden";
+          document.getElementById("dnx-unsplash-search-input").focus();
         } else {
           const dnxModal = document.createElement("div");
           dnxModal.id = "dnx-modal-wrapper";
@@ -155,11 +158,19 @@ export default class InsertImageFromUnsplash extends Plugin {
 
         // Swal.fire("Hello world!");
 
-        const handleSelect = (photo) => {
+        const handleSelect = async (photo) => {
           // const imageUrl = prompt("Image URL");
           // if (!imageUrl) return false;
           if (!photo.urls && !photo.urls.regular) {
             return false;
+          }
+
+          let downloadLink = "";
+          if (photo.links) {
+            downloadLink =
+              photo.links.download_location + "?client_id=" + clientID;
+
+            await superagent.get(downloadLink);
           }
 
           editor.model.change((writer) => {
@@ -172,7 +183,8 @@ export default class InsertImageFromUnsplash extends Plugin {
 
             if (photo.user) {
               const { name, links } = photo.user;
-              const link = links ? links.html : "https://unsplash.com";
+              let link = links ? links.html : "https://unsplash.com";
+              link += "?utm_source=DNX&utm_medium=referral";
 
               const captionElment = writer.createElement("caption");
 

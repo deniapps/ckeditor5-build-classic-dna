@@ -1,5 +1,15 @@
 # Changelog
 
+- 08/23/2020 - v1.0.8
+
+  - added utm tracking tag to the unsplash user profile url
+  - upgrade npm packages, like ckeditor5-dev-utils, webpack plugins, and babel/core, etc.
+
+- 08/22/2020 - v1.0.7
+
+  - added download event when insert the image from unsplash
+  - added focus to the search box when the modal is on
+
 - 08/20/2020 - v1.0.6
 
   - added new feature to add an image from unsplash
