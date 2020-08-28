@@ -76,6 +76,9 @@ class CKEditor5 extends Component {
 
 // See how to customize toolbar at: https://deniapps.com/blog/customize-ckeditor5-toolbar
 
+// You can add custom css to <table> & <img> now, see the details at:
+// https://deniapps.com/blog/how-to-add-custom-css-classes-to-table-or-img-in-ckeditor
+
   render() {
     return (
       <CKEditor
@@ -85,7 +88,7 @@ class CKEditor5 extends Component {
             customClass: ["ui", "table", "celled"], // Important!!! need to be array
           },
           image: {
-          	customClass: ["ui", "fluid", "image"], // whatever defined in your theme
+          	customClass: ["ui", "fluid", "image"], // Use whatever class names defined in your theme
           },
           toolbar: [
             "heading",
