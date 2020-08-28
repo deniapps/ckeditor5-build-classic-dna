@@ -2,6 +2,7 @@
 
 The DNA classic editor build for CKEditor 5 was created on the top of official CKEditor 5 classic editor build v21.0.0. It's a **CKEditor 5 Custom Build for Developer's Blog**, including some features:
 
+- Allow to add custom css to &lt;table&gt; and &lt;img&gt; (since V1.0.9)
 - Allow to add image from unsplash (since V1.0.6)
 - Allow to add &lt;code&gt; for inline Code Block (since V1.0.5)
 - Allow to insert Code Block
@@ -16,6 +17,7 @@ The DNA classic editor build for CKEditor 5 was created on the top of official C
 - [Customize CKEditor5 Toolbar](https://deniapps.com/blog/customize-ckeditor5-toolbar)
 - [Syntax Highlighting with Code Block](https://deniapps.com/blog/syntax-highlight-with-ckeditors-code-block)
 - [Open External Links in New Tab](https://deniapps.com/blog/open-external-links-in-new-tab-for-ckeditor)
+- [How to add Custom CSS Class Names &lt;table&gt; and &lt;img&gt;](https://deniapps.com/blog/how-to-add-custom-css-classes-to-table-or-img-in-ckeditor)
 
 ## Screenshots
 
@@ -79,6 +81,12 @@ class CKEditor5 extends Component {
       <CKEditor
         editor={ClassicEditor}
         config={{
+          table: {
+            customClass: ["ui", "table", "celled"], // Important!!! need to be array
+          },
+          image: {
+          	customClass: ["ui", "fluid", "image"], // whatever defined in your theme
+          },
           toolbar: [
             "heading",
             "|",

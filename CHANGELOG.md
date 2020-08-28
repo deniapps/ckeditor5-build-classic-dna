@@ -1,5 +1,9 @@
 # Changelog
 
+- 08/28/2020 - v1.0.9
+
+  - added a plugin to allow us to add custom CSS class names to &lt;table&gt; and &lt;img&gt;
+
 - 08/23/2020 - v1.0.8
 
   - added utm tracking tag to the unsplash user profile url
@@ -17,7 +21,7 @@
 - 08/09/2020 - v1.0.5
 
   - upgraded main library to v21.0.0
-  - added code style for inline <code> tag
+  - added code style for inline &lt;code&gt; tag
   - update insertImageUrl icon (Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>)
 
 - 07/22/2020 - v1.0.4 - add ImageUpload plugin
