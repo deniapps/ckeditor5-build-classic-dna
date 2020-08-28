@@ -29,6 +29,7 @@ import TableToolbar from "@ckeditor/ckeditor5-table/src/tabletoolbar";
 import TextTransformation from "@ckeditor/ckeditor5-typing/src/texttransformation";
 import InsertImage from "./InsertImage";
 import InsertImageFromUnsplash from "./InsertImageFromUnsplash";
+import CustomFigureAttributes from "./CustomFigureAttributes";
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -57,6 +58,7 @@ ClassicEditor.builtinPlugins = [
   Table,
   TableToolbar,
   TextTransformation,
+  CustomFigureAttributes,
 ];
 
 // Editor configuration.
