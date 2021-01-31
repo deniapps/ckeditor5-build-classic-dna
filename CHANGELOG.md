@@ -1,5 +1,14 @@
 # Changelog
 
+- 10/09/2020 - v1.0.11
+
+  - add Base64UploadAdapter as a default adapter when upload from local
+
+- 09/03/2020 - v1.0.10
+
+  - created custom codeblock to assign a random id to &lt;code&gt;, which could be useful in some cases.
+  - bumped core @ckeditor libraries to 22.0.0
+
 - 08/28/2020 - v1.0.9
 
   - added a plugin to allow us to add custom CSS class names to &lt;table&gt; and &lt;img&gt;

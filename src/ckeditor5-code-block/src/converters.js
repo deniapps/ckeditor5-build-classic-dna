@@ -189,6 +189,12 @@ export function dataViewToModelCodeBlockInsertion(editingView, languageDefs) {
     const codeBlock = writer.createElement("codeBlock");
     const viewChildClasses = [...viewChild.getClassNames()];
 
+    // keep existing id
+    const id = viewChild.getAttribute("id");
+    if (id) {
+      writer.setAttribute("codeID", id, codeBlock);
+    }
+
     // As we're to associate each class with a model language, a lack of class (empty class) can be
     // also associated with a language if the language definition was configured so. Pushing an empty
     // string to make sure the association will work.

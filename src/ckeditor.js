@@ -31,6 +31,7 @@ import TextTransformation from "@ckeditor/ckeditor5-typing/src/texttransformatio
 import InsertImage from "./InsertImage";
 import InsertImageFromUnsplash from "./InsertImageFromUnsplash";
 import CustomFigureAttributes from "./CustomFigureAttributes";
+import Base64UploadAdapter from "@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter";
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -49,6 +50,7 @@ ClassicEditor.builtinPlugins = [
   ImageStyle,
   ImageToolbar,
   ImageUpload,
+  Base64UploadAdapter,
   InsertImage,
   InsertImageFromUnsplash,
   Indent,
@@ -77,6 +79,7 @@ ClassicEditor.defaultConfig = {
       "indent",
       "outdent",
       "|",
+      "imageUpload",
       "insertImage",
       "insertImageFromUnsplash",
       "code",
