@@ -1,5 +1,9 @@
 # Changelog
 
+- 03/18/2021 - v1.0.15
+
+  - Fixed Unsplash download url
+
 - 10/09/2020 - v1.0.11
 
   - add Base64UploadAdapter as a default adapter when upload from local

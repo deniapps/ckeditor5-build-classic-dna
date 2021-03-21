@@ -13,6 +13,12 @@ let clientID = "TN-IIz68YhmPLsEAbVD4WA3RucFcJNZBy-G0UlhaqSM";
 
 const { useState, useEffect, useRef } = React;
 
+const addParameterToURL = (baseUrl, param) => {
+  let _url = baseUrl;
+  _url += (_url.split("?")[1] ? "&" : "?") + param;
+  return _url;
+};
+
 const simpleGet = (options) => {
   superagent
     .get(options.url)
@@ -167,10 +173,17 @@ export default class InsertImageFromUnsplash extends Plugin {
 
           let downloadLink = "";
           if (photo.links) {
-            downloadLink =
-              photo.links.download_location + "?client_id=" + clientID;
-
-            await superagent.get(downloadLink);
+            // downloadLink =
+            // photo.links.download_location + "&client_id=" + clientID;
+            downloadLink = addParameterToURL(
+              photo.links.download_location,
+              "client_id=" + clientID
+            );
+            try {
+              await superagent.get(downloadLink);
+            } catch (error) {
+              console.log("ERR", error);
+            }
           }
 
           editor.model.change((writer) => {
