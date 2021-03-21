@@ -6,7 +6,7 @@
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1); */
   color: #4a4a4a;
   display: block;
-  padding: 2.25rem;
+  padding: 3.25rem;
 }
 
 /* .dnx-modal input {
@@ -53,11 +53,9 @@
   /* This way it could be display flex or grid or whatever also. */
   display: block;
 
-  /* Probably need media queries here */
-  width: 600px;
-  max-width: 100%;
-  height: 400px;
-  max-height: 100%;
+  /* Use percentage for a large view */
+  width: 70%;
+  height: 80%;
   position: fixed;
   z-index: 501;
   left: 50%;
@@ -70,7 +68,7 @@
   /* margin: -200px 0 0 -200px; */
 
   background: white;
-  box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.5);
 }
 .dnx-modal.closed,
 .dnx-modal-overlay.closed {
@@ -91,14 +89,13 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 380px;
   overflow: hidden;
 }
 
 .dnx-close-button {
   position: absolute;
-  right: 8px;
-  top: 8px;
+  right: 15px;
+  top: 15px;
   width: 28px;
   height: 28px;
   opacity: 0.3;
@@ -133,14 +130,13 @@
 }
 
 .dnx-photo-grid {
-  display: -webkit-box;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   margin: 0 -8px -8px 0px;
   padding: 0;
   overflow: auto;
-  max-height: 300px;
+  height: 70vh;
 }
 
 .dnx-modal .dnx-photo-grid::-webkit-scrollbar {

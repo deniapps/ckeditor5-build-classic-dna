@@ -5,11 +5,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import superagent from "superagent";
 import "./modal.css";
+import { unsplashClientID } from "./secret";
 
-// const clientID =
-//   "8e31e45f4a0e8959d456ba2914723451b8262337f75bcea2e04ae535491df16d";
-
-let clientID = "TN-IIz68YhmPLsEAbVD4WA3RucFcJNZBy-G0UlhaqSM";
+let clientID = unsplashClientID;
 
 const { useState, useEffect, useRef } = React;
 

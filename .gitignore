@@ -16,4 +16,9 @@ yarn-error.log*
 test.sh
 
 .idea/*
-#
+.vscode
+
+# secret like apikey
+secret.js
+
+
