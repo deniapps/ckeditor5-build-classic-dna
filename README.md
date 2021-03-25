@@ -1,8 +1,8 @@
 # CKEditor 5 classic editor build customized by DNA (DeNiApps.COM) - With Unsplash, Code Block and more.
 
-The DNA classic editor build for CKEditor 5 was created on the top of official CKEditor 5 classic editor build v22.0.0. It's a **CKEditor 5 Custom Build for Developer's Blog**, including many features like:
+The DNA classic editor build for CKEditor 5 was created on the top of official CKEditor 5 classic editor build v27.0.0. It's a **CKEditor 5 Custom Build for Developer's Blog**, including many features like:
 
-- Search up to five pages search results from Unsplash - scrolling down to see more :-) (since V1.0.17)
+- Search up to five pages of results from Unsplash - scrolling down to see more :-) (since V1.0.17)
 - Allow to upload image from local with Base64UploadAdapter as default (since V1.0.11)
 - Auto assigned id attribute to &lt;code&gt; in Code Block (since V1.0.10)
 - Allow to add custom css to &lt;table&gt; and &lt;img&gt; (since V1.0.9)

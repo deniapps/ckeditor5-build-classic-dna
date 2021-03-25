@@ -2,8 +2,12 @@
 
 - 03/18/2021 - v1.0.17
 
-  - Use Unsplash Search API instead of Ramdon API
-  - Allow to search a few more pages
+  - Bumped ckeditor5-build-classic to v27.0.0, and bumped some other packages
+
+- 03/18/2021 - v1.0.17
+
+  - Used Unsplash Search API instead of Ramdon API
+  - Allowed to search a few more pages
 
 - 03/18/2021 - v1.0.16
 
@@ -15,7 +19,7 @@
 
 - 10/09/2020 - v1.0.11
 
-  - add Base64UploadAdapter as a default adapter when upload from local
+  - added Base64UploadAdapter as a default adapter when upload from local
 
 - 09/03/2020 - v1.0.10
 
@@ -29,7 +33,7 @@
 - 08/23/2020 - v1.0.8
 
   - added utm tracking tag to the unsplash user profile url
-  - upgrade npm packages, like ckeditor5-dev-utils, webpack plugins, and babel/core, etc.
+  - upgraded npm packages, like ckeditor5-dev-utils, webpack plugins, and babel/core, etc.
 
 - 08/22/2020 - v1.0.7
 

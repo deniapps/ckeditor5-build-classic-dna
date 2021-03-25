@@ -37,7 +37,10 @@ const App = (props) => {
   const queryInput = useRef(null);
 
   const numberOfPhotos = 30;
+  const maxPages = 5;
 
+  // add listener to scroll even
+  // setHasMore when reach the bottom
   useEffect(() => {
     const list = document.getElementById("dnx-photo-list");
     // list has fixed height
@@ -69,7 +72,7 @@ const App = (props) => {
       "&client_id=" +
       clientID;
     const photosUrl = query ? `${url}&query=${query}` : randomUrl;
-    if (hasMore && page < 5) {
+    if (hasMore && page <= maxPages) {
       simpleGet({
         url: photosUrl,
         onSuccess: (res) => {
@@ -97,7 +100,7 @@ const App = (props) => {
 
   const searchPhotos = (e) => {
     e.preventDefault();
-    setPhotos([]);
+    setPhotos(null);
     setPage(1);
     setHasMore(true);
     setQuery(queryInput.current.value);
