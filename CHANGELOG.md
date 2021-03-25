@@ -1,5 +1,14 @@
 # Changelog
 
+- 03/18/2021 - v1.0.17
+
+  - Use Unsplash Search API instead of Ramdon API
+  - Allow to search a few more pages
+
+- 03/18/2021 - v1.0.16
+
+  - Updated the size of Unsplash Modal
+
 - 03/18/2021 - v1.0.15
 
   - Fixed Unsplash download url

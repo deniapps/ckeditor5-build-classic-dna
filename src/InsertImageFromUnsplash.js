@@ -31,39 +31,75 @@ const simpleGet = (options) => {
 const App = (props) => {
   let [photos, setPhotos] = useState(null);
   let [query, setQuery] = useState("");
+  let [hasMore, setHasMore] = useState(true);
+  let [page, setPage] = useState(1);
+
   const queryInput = useRef(null);
 
   const numberOfPhotos = 30;
-  const randomUrl =
-    "https://api.unsplash.com/photos/random/?count=" +
-    numberOfPhotos +
-    "&client_id=" +
-    clientID;
 
-  // TO-DO: use search instead?
-  // const url =
-  //   "https://api.unsplash.com/search/photos/?count=" +
-  //   numberOfPhotos +
-  //   "&client_id=" +
-  //   clientID;
+  useEffect(() => {
+    const list = document.getElementById("dnx-photo-list");
+    // list has fixed height
+    list.addEventListener("scroll", (e) => {
+      const el = e.target;
+      if (el.scrollTop + el.clientHeight === el.scrollHeight) {
+        setHasMore(true);
+      }
+    });
+    return () => list.removeEventListener("scroll");
+  }, []);
 
   useEffect(() => {
     queryInput.current.focus();
-    const photosUrl = query ? `${randomUrl}&query=${query}` : randomUrl;
+    console.log("QUERY", query);
+    // use random
+    const randomUrl =
+      "https://api.unsplash.com/photos/random/?count=" +
+      numberOfPhotos +
+      "&client_id=" +
+      clientID;
 
-    simpleGet({
-      url: photosUrl,
-      onSuccess: (res) => {
-        setPhotos(res.body);
-      },
-      onFailure: () => {
-        setPhotos([]);
-      },
-    });
-  }, [query, randomUrl]);
+    // use search
+    const url =
+      "https://api.unsplash.com/search/photos/?per_page=" +
+      numberOfPhotos +
+      "&page=" +
+      page +
+      "&client_id=" +
+      clientID;
+    const photosUrl = query ? `${url}&query=${query}` : randomUrl;
+    if (hasMore && page < 5) {
+      simpleGet({
+        url: photosUrl,
+        onSuccess: (res) => {
+          const photoFetched = Array.isArray(res.body)
+            ? res.body
+            : res.body.results;
+          if (photos === null) {
+            photos = photoFetched;
+          } else {
+            photos = photos.concat(photoFetched);
+          }
+          setPhotos(photos);
+
+          if (photoFetched.length > 0) {
+            setPage(page + 1);
+          }
+        },
+        onFailure: () => {
+          setPhotos([]);
+        },
+      });
+    }
+    setHasMore(false);
+  }, [query, page, hasMore]);
 
   const searchPhotos = (e) => {
     e.preventDefault();
+    setPhotos([]);
+    setPage(1);
+    setHasMore(true);
     setQuery(queryInput.current.value);
   };
 
@@ -84,8 +120,7 @@ const App = (props) => {
           style={{ marginBottom: 20 }}
         />
       </form>
-
-      <ul className="dnx-photo-grid">
+      <ul id="dnx-photo-list" className="dnx-photo-grid">
         {photos === null && <p>Loading...</p>}
         {photos !== null && photos.length === 0 && <p>No results</p>}
         {photos !== null &&
