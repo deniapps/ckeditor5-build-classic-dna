@@ -1,15 +1,19 @@
 # Changelog
 
-- 03/18/2021 - v1.0.17
+- 03/27/2021 - v1.0.19
+
+  - Removed Source Map
+
+- 03/25/2021 - v1.0.18
 
   - Bumped ckeditor5-build-classic to v27.0.0, and bumped some other packages
 
-- 03/18/2021 - v1.0.17
+- 03/24/2021 - v1.0.17
 
   - Used Unsplash Search API instead of Ramdon API
   - Allowed to search a few more pages
 
-- 03/18/2021 - v1.0.16
+- 03/21/2021 - v1.0.16
 
   - Updated the size of Unsplash Modal
 
