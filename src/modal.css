@@ -1,5 +1,3 @@
-@import "https://fonts.googleapis.com/css?family=Prompt:400,700";
-
 .dnx-box {
   background-color: #fff;
   /* border-radius: 6px;
@@ -161,4 +159,16 @@
   vertical-align: bottom;
   border-radius: 4px;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .dnx-box {
+    padding: 3.25rem 1.5rem;
+  }
+
+  /* For mobile phones: */
+  .dnx-modal {
+    /* Use percentage for a large view */
+    width: 95%;
+  }
 }

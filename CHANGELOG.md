@@ -1,5 +1,9 @@
 # Changelog
 
+- 03/28/2021 - v1.1.0
+
+  - Improve Scrolling - First minor version is ready!
+
 - 03/27/2021 - v1.0.19
 
   - Removed Source Map

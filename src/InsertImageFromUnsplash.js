@@ -31,7 +31,7 @@ const simpleGet = (options) => {
 const App = (props) => {
   let [photos, setPhotos] = useState(null);
   let [query, setQuery] = useState("");
-  let [hasMore, setHasMore] = useState(true);
+  let [isBottom, setIsBottom] = useState(false);
   let [page, setPage] = useState(1);
 
   const queryInput = useRef(null);
@@ -39,23 +39,25 @@ const App = (props) => {
   const numberOfPhotos = 30;
   const maxPages = 5;
 
+  const handleScroll = (e) => {
+    const el = e.target;
+    if (el.scrollTop + el.clientHeight + 50 >= el.scrollHeight) {
+      setIsBottom(true);
+    }
+  };
+
   // add listener to scroll even
-  // setHasMore when reach the bottom
+  // setIsBottom when reach the bottom
   useEffect(() => {
     const list = document.getElementById("dnx-photo-list");
     // list has fixed height
-    list.addEventListener("scroll", (e) => {
-      const el = e.target;
-      if (el.scrollTop + el.clientHeight === el.scrollHeight) {
-        setHasMore(true);
-      }
-    });
-    return () => list.removeEventListener("scroll");
+    list.addEventListener("scroll", handleScroll);
+    return () => list.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     queryInput.current.focus();
-    console.log("QUERY", query);
+    // console.log("QUERY", query);
     // use random
     const randomUrl =
       "https://api.unsplash.com/photos/random/?count=" +
@@ -72,7 +74,10 @@ const App = (props) => {
       "&client_id=" +
       clientID;
     const photosUrl = query ? `${url}&query=${query}` : randomUrl;
-    if (hasMore && page <= maxPages) {
+
+    // only fetch one for ramdomulr
+    // when there is query, it's using search API
+    if (page === 1 || (query && isBottom && page <= maxPages)) {
       simpleGet({
         url: photosUrl,
         onSuccess: (res) => {
@@ -88,6 +93,7 @@ const App = (props) => {
 
           if (photoFetched.length > 0) {
             setPage(page + 1);
+            setIsBottom(false);
           }
         },
         onFailure: () => {
@@ -95,14 +101,13 @@ const App = (props) => {
         },
       });
     }
-    setHasMore(false);
-  }, [query, page, hasMore]);
+  }, [query, isBottom]);
 
   const searchPhotos = (e) => {
     e.preventDefault();
     setPhotos(null);
     setPage(1);
-    setHasMore(true);
+    // setIsBottom(false);
     setQuery(queryInput.current.value);
   };
 
