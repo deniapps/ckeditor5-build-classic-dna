@@ -1,5 +1,9 @@
 # Changelog
 
+- 04/02/2021 - v1.1.1
+
+  - Bump Y18N to 4.0.1
+
 - 03/28/2021 - v1.1.0
 
   - Improve Scrolling - First minor version is ready!
