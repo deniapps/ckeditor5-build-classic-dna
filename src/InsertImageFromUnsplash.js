@@ -171,11 +171,8 @@ export default class InsertImageFromUnsplash extends Plugin {
         if (modal) {
           modal.classList.toggle("closed");
           modalOverlay.classList.toggle("closed");
-          document.querySelector(
-            "body"
-          ).style.overflow = modal.classList.contains("closed")
-            ? "visible"
-            : "hidden";
+          document.querySelector("body").style.overflow =
+            modal.classList.contains("closed") ? "visible" : "hidden";
           document.getElementById("dnx-unsplash-search-input").focus();
         } else {
           const dnxModal = document.createElement("div");
@@ -228,9 +225,12 @@ export default class InsertImageFromUnsplash extends Plugin {
           }
 
           editor.model.change((writer) => {
-            const imageElement = writer.createElement("image", {
+            const imageElement = writer.createElement("imageBlock", {
               src: photo.urls.regular,
             });
+
+            // console.log("photo", photo.urls);
+            // console.log("ImageElement", imageElement);
 
             // const link = writer.createText(photo.user.name);
             // writer.setAttribute("linkHref", photo.user.links.html, link);

@@ -1,5 +1,9 @@
 # Changelog
 
+- 10/03/2021 - v1.2.0
+
+  - Bump to @ckeditor/ckeditor5 classic build v30.0.0
+
 - 04/02/2021 - v1.1.1
 
   - Bump Y18N to 4.0.1
