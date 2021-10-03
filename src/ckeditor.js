@@ -93,7 +93,7 @@ ClassicEditor.defaultConfig = {
   },
   image: {
     toolbar: [
-      "imageStyle:full",
+      // "imageStyle:full", //react_devtools_backend.js:4049 toolbarview-item-unavailable since v30.0.0
       "imageStyle:side",
       "|",
       "imageTextAlternative",
