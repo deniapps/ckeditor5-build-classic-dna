@@ -32,7 +32,6 @@ module.exports = {
   optimization: {
     minimizer: [
       new TerserPlugin({
-        sourceMap: false,
         terserOptions: {
           output: {
             // Preserve CKEditor 5 license comments.
@@ -67,7 +66,7 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: "babel-loader",
-        query: {
+        options: {
           presets: ["@babel/react"],
         },
       },
@@ -83,14 +82,17 @@ module.exports = {
               },
             },
           },
+          "css-loader",
           {
             loader: "postcss-loader",
-            options: styles.getPostCssConfig({
-              themeImporter: {
-                themePath: require.resolve("@ckeditor/ckeditor5-theme-lark"),
-              },
-              minify: true,
-            }),
+            options: {
+              postcssOptions: styles.getPostCssConfig({
+                themeImporter: {
+                  themePath: require.resolve("@ckeditor/ckeditor5-theme-lark"),
+                },
+                minify: true,
+              }),
+            },
           },
         ],
       },

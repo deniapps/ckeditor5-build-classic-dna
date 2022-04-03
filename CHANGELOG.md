@@ -1,5 +1,14 @@
 # Changelog
 
+- 04/02/0222 - v1.3.0
+- Bump to @ckeditor/ckeditor5 classic build v33.0.0
+- Integrate ImageResize plugin
+
+- 10/03/2021 - v1.2.1
+
+  - Bump tar from 6.0.5 to 6.1.11 #9
+  - Bump path-parse from 1.0.6 to 1.0.7
+
 - 10/03/2021 - v1.2.0
 
   - Bump to @ckeditor/ckeditor5 classic build v30.0.0
