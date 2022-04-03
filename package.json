@@ -1,6 +1,6 @@
 {
   "name": "ckeditor5-build-classic-dna",
-  "version": "1.3.0",
+  "version": "1.3.2",
   "description": "The DNA classic editor build of CKEditor 5 with Code Block and Unsplash – the best browser-based rich text editor",
   "keywords": [
     "ckeditor5-build",
@@ -77,9 +77,11 @@
     "preversion": "npm run build"
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0"
+  },
+  "dependencies": {
     "shortid": "^2.2.16",
-    "superagent": "^6.1.0"
+    "superagent": "^7.1.1"
   }
 }

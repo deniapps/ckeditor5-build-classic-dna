@@ -1,5 +1,8 @@
 # Changelog
 
+- 04/02/0222 - v1.3.1
+- Update peersDependencies
+
 - 04/02/0222 - v1.3.0
 - Bump to @ckeditor/ckeditor5 classic build v33.0.0
 - Integrate ImageResize plugin
