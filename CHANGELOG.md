@@ -1,5 +1,8 @@
 # Changelog
 
+- 07/15/2023 - v1.3.5
+- Update CKEditor V38.1.1
+
 - 04/02/0222 - v1.3.1
 - Update peersDependencies
 
